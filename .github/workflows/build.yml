@@ -1,13 +1,18 @@
-name: Your Project CI
+name: bataille
 
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
+    env:
+      SONAR_ORG: ${{ secrets.SONAR_ORGANIZATION }}
+      SONAR_PROJECT_KEY: ${{ secrets.SONAR_PROJECT_KEY }}
+      SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
     steps:
     - name: Checkout Repository
@@ -22,7 +27,7 @@ jobs:
     - name: Build and Analyze with SonarCloud
       run: |
         ./mvnw clean install sonar:sonar \
-          -Dsonar.organization=ecn-info-medev \
-          -Dsonar.projectKey=ECN-info-MEDEV_tp-note-ds_souhail_zakariae_medev \
+          -Dsonar.organization=$SONAR_ORG \
+          -Dsonar.projectKey=$SONAR_PROJECT_KEY \
           -Dsonar.host.url=https://sonarcloud.io \
-          -Dsonar.login=7b25757ef27c34867863db8bb36194e68209e90d
+          -Dsonar.login=$SONAR_TOKEN
