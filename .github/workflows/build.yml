@@ -22,7 +22,7 @@ jobs:
     - name: Build and Analyze with SonarCloud
       run: |
         ./mvnw clean install sonar:sonar \
-          -Dsonar.organization=ECN-info-MEDEV \
+          -Dsonar.organization=ecn-info-medev \
           -Dsonar.projectKey=ECN-info-MEDEV_tp-note-ds_souhail_zakariae_medev \
           -Dsonar.host.url=https://sonarcloud.io \
           -Dsonar.login=7b25757ef27c34867863db8bb36194e68209e90d
