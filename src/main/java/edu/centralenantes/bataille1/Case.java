@@ -1,17 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package edu.centralenantes.bataille;
+package edu.centralenantes.bataille1;
 
-/**
- *
- * @author Souhail
- */
 /**
  * La classe représentant une case de la grille.
  *
- * @author [Votre nom]
+ * @author Souhail
  * @version 1.0
  */
 public class Case {
@@ -19,7 +11,7 @@ public class Case {
     /**
      * Les coordonnées de la case.
      */
-    private Coordonnees coordonnees;
+    private final Coordonnees coordonnees;
 
     /**
      * Indique si la case est touchée.
@@ -75,8 +67,6 @@ public class Case {
      */
     public void toucher() {
         this.touchee = true;
-
-        // Si la case est la dernière du bateau, coule le bateau.
         if (estDerniereCaseTouchee()) {
             couler();
         }
@@ -86,7 +76,7 @@ public class Case {
      * Met la case à l'état coulé.
      */
     public void couler() {
-        this.coule = true;
+        this.coulee = true;
     }
 
     /**
@@ -96,10 +86,10 @@ public class Case {
      */
     private boolean estDerniereCaseTouchee() {
         // On considère que la case est la dernière case touchée du bateau si elle est la seule case touchée du bateau.
-        return !getGrille().estTouchee(coordonnees.x + 1, coordonnees.y) &&
-                !getGrille().estTouchee(coordonnees.x - 1, coordonnees.y) &&
-                !getGrille().estTouchee(coordonnees.x, coordonnees.y + 1) &&
-                !getGrille().estTouchee(coordonnees.x, coordonnees.y - 1);
+        return !getGrille().estTouchee(coordonnees.x + 1, coordonnees.y)
+                && !getGrille().estTouchee(coordonnees.x - 1, coordonnees.y)
+                && !getGrille().estTouchee(coordonnees.x, coordonnees.y + 1)
+                && !getGrille().estTouchee(coordonnees.x, coordonnees.y - 1);
     }
 
     /**
@@ -117,4 +107,6 @@ public class Case {
             return ".";
         }
     }
+
+    // Ajoutez la méthode getGrille() si nécessaire.
 }

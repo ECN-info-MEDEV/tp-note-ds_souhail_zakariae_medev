@@ -1,4 +1,4 @@
-package edu.centralenantes.bataille;
+package edu.centralenantes.bataille1;
 
 
 /**
