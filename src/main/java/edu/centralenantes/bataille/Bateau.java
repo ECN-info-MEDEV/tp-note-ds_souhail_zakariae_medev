@@ -1,17 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package edu.centralenantes.bataille;
 
-/**
- *
- * @author Souhail
- */
+
 /**
  * Un bateau, avec une taille et des informations sur son état (touché, coulé).
  *
- * @author [Votre nom]
  * @version 1.0
  */
 public abstract class Bateau {
@@ -19,19 +11,19 @@ public abstract class Bateau {
     /**
      * La taille du bateau.
      */
-    @property
+
     private int taille;
 
     /**
      * Indique si le bateau est touché.
      */
-    @property
+     
     private boolean touche;
 
     /**
      * Indique si le bateau est coulé.
      */
-    @property
+     
     private boolean coule;
 
     /**
@@ -50,7 +42,6 @@ public abstract class Bateau {
      *
      * @return La taille du bateau.
      */
-    @method
     public int getTaille() {
         return taille;
     }
@@ -60,7 +51,6 @@ public abstract class Bateau {
      *
      * @return True si le bateau est touché, false sinon.
      */
-    @method
     public boolean estTouche() {
         return touche;
     }
